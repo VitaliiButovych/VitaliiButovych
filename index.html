@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>monblanproject</title>
+	<link rel="stylesheet" href="css/style.css" class="css">
+	<link rel="stylesheet" href="css/fonts.css" class="css">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="https:/resources/demos/style.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+	  $( function() {
+	    var dateFormat = "dd_mm_yy",
+	      from = $( "#from" )
+	        .datepicker({
+	          defaultDate: "+1w",
+	          changeMonth: true,
+	          numberOfMonths: 1
+	        })
+	        .on( "change", function() {
+	          to.datepicker( "option", "minDate", getDate( this ) );
+	        }),
+	      to = $( "#to" ).datepicker({
+	        defaultDate: "+1w",
+	        changeMonth: true,
+	        numberOfMonths: 1
+	      })
+	      .on( "change", function() {
+	        from.datepicker( "option", "maxDate", getDate( this ) );
+	      });
+	 
+	    function getDate( element ) {
+	      var date;
+	      try {
+	        date = $.datepicker.parseDate( dateFormat, element.value );
+	      } catch( error ) {
+	        date = null;
+	      }
+	 
+	      return date;
+	    }
+	  } );
+	  </script>
+</head>
+<body>
+	<header>
+		<div class="layout">
+			<div class="left"><img src="img/Logo.png" alt="logo"></div>
+			<div class="right">
+				<div class="top">
+					<h1>monblanproject</h1>
+					<span>Start on 17-02-2016</span>
+				</div>
+				<ul>
+					<li><strong>870</strong> posts</li>
+					<li><strong>11,787</strong> followers</li>
+					<li><strong>112</strong> following</li>
+				</ul>
+				<form class="datepicker">
+					<label for="from">Date</label>
+					<input type="text" id="from" name="from" placeholder="from">
+					<label for="to">to</label>
+					<input type="text" id="to" name="to" placeholder="to">
+				</form>
+			</div>
+		</div>
+	</header>
+	<section id="images-upload">
+		<div class="layout">
+			<div class="images">
+
+
+				<div class="image-upload">
+					<img src="img/Img1.png" alt="img1" class="img">
+					<div class="tile">
+						<div class="line">
+							<span>Today</span>
+							<img src="img/favorite.png" alt="img">
+							<span>128</span>
+							<img src="img/comment.png" alt="img">
+							<span>31</span>
+						</div>
+						<div class="line">
+							<span>9-08-2016</span>
+							<img src="img/favorite.png" alt="img">
+							<span>67</span>
+							<img src="img/comment.png" alt="img">
+							<span>22</span>
+						</div>
+
+						<p>Image upload: 11-04-2016</p>
+					</div>
+				</div>
+
+
+
+				<div class="image-upload">
+					<img src="img/Img2.png" alt="img2" class="img">
+				</div>
+				<div class="image-upload">
+					<img src="img/Img3.png" alt="img3" class="img">
+				</div>
+				<div class="image-upload">
+					<img src="img/Img4.png" alt="img4" class="img">
+				</div>
+				<div class="image-upload">
+					<img src="img/Img5.png" alt="img5" class="img">
+				</div>
+				<div class="image-upload">
+					<img src="img/Img6.png" alt="img6" class="img">
+				</div>
+				<div class="image-upload">
+					<img src="img/Img7.png" alt="img7" class="img">
+				</div>
+				<div class="image-upload">
+					<img src="img/Img8.png" alt="img8" class="img">
+				</div>
+				<div class="image-upload">
+					<img src="img/Img9.png" alt="img9" class="img">
+				</div>
+			</div>
+		</div>
+			<a href="#" class="load-more">load more</a>
+	</section>
+</body>
+</html>
